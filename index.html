@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From My Heart – Vintage Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Indie Flower', cursive;
+      background-image: url('img1.jpg'); /* Replace with better texture later */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #5a3e36;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+
+    .love-note {
+      font-size: 1.4em;
+      line-height: 1.8;
+      white-space: pre-wrap;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 40px;
+      font-size: 1.2em;
+    }
+
+     .btn {
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  color: white;
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(255, 105, 180, 0.3);
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff85c1, #ff4081);
+  box-shadow: 0 12px 20px rgba(255, 105, 180, 0.4);
+  transform: scale(1.05);
+}
+
+.emoji {
+  position: fixed;
+  top: 0;
+  font-size: 24px;
+  animation: fall linear forwards;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>From My Heart, To My Modak 💌</h1>
+    <div class="love-note">
+     Aap kehte ho tum mujhse pyaar karte ho...
+par pyaar ka matlab kya sirf kehna hota hai?
+
+Main toh bas ek chhota sa message chahti thi...
+ek "Hi", ek "Kaise ho?", ek chhoti si yaad –
+par aapka 'online' hona bhi meri duniya se doori ka sabab ban gaya.
+
+Aapki ek chhup jaane wali khamoshi
+mera din khamosh kar deti hai...
+
+Aapka bina baat kiye – main kab se aapse baat kar rahi hoon...
+apne dil mein, apne khayalon mein, apne aansuon ke beech.
+
+Mujhe zarurat nahi thi bade promises ki...
+mujhe toh bas zarurat thi aapke ek lamhe ki –
+jo sirf mera ho, bina kisi reason ke...
+
+Lekin aap busy rahe... ya shayad free hokar bhi mujhmein dil nahi lagta hai.
+Shayd main sirf aapki duniya ka ek pause hu...
+jabki aap meri saari duniya ban chuke ho...
+
+Phir bhi – aaj bhi –
+main aapka intezaar karti hoon...
+
+– Ek ladki... jo aapse sirf ek saccha pyaar chahti thi.
+    </div>
+      <div class="signature">
+    — Tumhari Deepu 🕊️
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <button class="btn" onclick="window.location.href='next.html'">Chalo chalo yaha click kijiye jaldi..:) 💌</button>
+  </div>
+
+
+  <script>
+  const emojis = ["❤️", "😂", "✨", "🥺", "💌", "🌸"];
+  function createEmoji() {
+    const emoji = document.createElement("div");
+    emoji.classList.add("emoji");
+    emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.animationDuration = Math.random() * 2 + 3 + "s";
+    document.body.appendChild(emoji);
+    setTimeout(() => {
+      emoji.remove();
+    }, 5000);
+  }
+  window.addEventListener("scroll", () => {
+    createEmoji();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!-- letter.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Funny Letter to My Hero🤭</title>
+  <style>
+    body {
+      background: url('img2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Georgia', serif;
+      color: white;
+      padding: 2rem;
+    }
+    .letter-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 20px;
+      max-width: 700px;
+      margin: 5% auto;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      color: #ffc0cb;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+   .heart {
+  position: absolute;
+  animation: burst 1s ease-out forwards;
+  font-size: 20px;
+  pointer-events: none;
+  z-index: 10000;
+  color: pink;
+}
+.emoji {
+  position: fixed;
+  top: 0;
+  font-size: 24px;
+  animation: fall linear forwards;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="letter-box">
+    <h1>From My Heart, To My Modak🤭💌</h1>
+    <p>
+      Mere Pyaare Hero, <br><br>
+
+      Kabhi kabhi sochti hoon aap meri life mein aaye kaise?  
+      Phir yaad aata hai... oh haan, God ne kaha hoga:  
+      “Iss pagal ladki ke liye ek cute se majnu bhejna padega jo iski har nautanki jhel sake.” 😄💫<br><br>
+
+      Aapki hasi... uff, jaise filter laga ho duniya pe,  
+      Aur aapki baatein... kabhi kabhi itni sweet hoti hain ki mujhe doubt hota hai,  
+      kya aap secretly Dairy Milk ho? 🍫😂<br><br>
+
+      Jab aap khudko smart samajhte ho na...  
+      Mera dil kehta hai – “Bhai, ye toh sirf dikhawa hai, asli smart toh main hoon!” 😜  
+      Par kya karein... aap cute ho, toh maaf kar diya. 💁🏻‍♀️💘<br><br>
+
+      Kabhi zyada over-smart mat banna,  
+      warna main aapko love ke naam pe 100 sit-ups karwa dungi! 😆  
+      (Aur haan, agar late reply ki aadat gayi nahi, toh “Mujhse shaadi karoge?” ka answer pending rahega!) 😂<br><br>
+
+      Bas itna hi kehna hai...  
+      Chahe duniya palat jaaye, main aapki pyaari si Deepu hi rahungi.  
+      Thodi emotional, thodi pagal... par aapse sach mein bohot bohot pyaar karti hoon. 💖<br><br>
+
+      Love You Forever,  
+      <span style="font-style: italic;">Aapki Drama Queen – Deepu 😘</span>
+    </p>
+  </div>
+<script>
+
+
+  const emojis = ["❤️", "😂", "✨", "🥺", "💌", "🌸"];
+  function createEmoji() {
+    const emoji = document.createElement("div");
+    emoji.classList.add("emoji");
+    emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.animationDuration = Math.random() * 2 + 3 + "s";
+    document.body.appendChild(emoji);
+    setTimeout(() => {
+      emoji.remove();
+    }, 5000);
+  }
+  window.addEventListener("scroll", () => {
+    createEmoji();
+  });
+
+
+  const btn = document.querySelector(".btn");
+
+  btn.addEventListener("click", (e) => {
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "💖";
+      heart.style.left = e.clientX + "px";
+      heart.style.top = e.clientY + "px";
+
+      // Random direction
+      const x = (Math.random() - 0.5) * 200; // -100 to +100
+      const y = (Math.random() - 0.5) * 200;
+
+      heart.animate([
+        { transform: "translate(0, 0)", opacity: 1 },
+        { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
+      ], {
+        duration: 1000,
+        easing: "ease-out"
+      });
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 1000);
+    }
+  });
+</script>
+
+
+</body>
+</html>
